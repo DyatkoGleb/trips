@@ -83,7 +83,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-package">
 						<div class="thumb">
-							<img class="img-fluid" src="img/package/<?= 'p1.jpg'?>" alt="">
+							<img class="img-fluid" src="img/package/<?= $item['pict']?>" alt="">
 						</div>
 						<p class="date"><span><?= $date->format('j');?>
                             </span> <br> <?=$date->format('F');?> </p>

@@ -131,7 +131,7 @@ try {
         insert_user($database, $_POST);
         $_SESSION['username'] = $_POST['signup_email'];
         $_SESSION['psw'] = $_POST['signup_psw'];
-        header('Location: /taxa');
+        header('Location: /');
     }
 
 
@@ -139,25 +139,25 @@ try {
     if(isset($_POST['deleteCommentBtn'])){
         print_r($_POST);
         delete_comment_by_id($database, $_POST['deleteCommentBtn']);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['deleteTeamMemberBtn'])){
         print_r($_POST);
         delete_team_member_by_id($database, $_POST['deleteTeamMemberBtn']);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['deleteFamousPlaceModalBtn'])){
         print_r($_POST);
         delete_famous_place_by_id($database, $_POST['deleteFamousPlaceModalBtn']);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['deleteTripModalBtn'])){
         print_r($_POST);
         delete_trip_by_id($database, $_POST['deleteTripModalBtn']);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
 
@@ -172,7 +172,7 @@ try {
         $item['disc'] = $_POST['updateTeamMemberFormDisc'];
         $item['pict'] = $_POST['updateTeamMemberFormPict'];
         update_team_member_by_id($database, $item);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['updateCommentModalName'])){
@@ -184,7 +184,7 @@ try {
         $item['desc'] = $_POST['updateCommentModalDisc'];
         $item['pict'] = $_POST['updateCommentModalPict'];
         update_comment_by_id($database, $item);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['updateFamousPlaceModalName'])){
@@ -196,7 +196,7 @@ try {
         $item['desc'] = $_POST['updateFamousPlaceModalDisc'];
         $item['pict'] = $_POST['updateFamousPlaceModalPict'];
         update_famous_place_by_id($database, $item);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['updateTripModalName'])){
@@ -212,7 +212,7 @@ try {
         $item['full_disc'] = $_POST['updateTripModalFullDisc'];
         $item['id'] = $_POST['updateTripModalModalId'];
         update_trip_by_id($database, $item);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
 
@@ -229,7 +229,7 @@ try {
         $item['disc'] = $_POST['createTeamMemberFormDisc'];
         $item['pict'] = $_POST['createTeamMemberFormPict'];
         insert_team_member($database, $item);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['createCommentModalName'])){
@@ -240,7 +240,7 @@ try {
         $item['desc'] = $_POST['createCommentModalDisc'];
         $item['pict'] = $_POST['createCommentModalPict'];
         insert_comment($database, $item);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['createFamousPlaceModalName'])){
@@ -251,7 +251,7 @@ try {
         $item['desc'] = $_POST['createFamousPlaceModalDisc'];
         $item['pict'] = $_POST['createFamousPlaceModalPict'];
         insert_famous_place($database, $item);
-        header('Location: /taxa/admin.php');
+        header('Location: /admin.php');
     }
 
     if(isset($_POST['createTripModalName'])){
@@ -264,7 +264,7 @@ try {
         $item['time'] = $_POST['createTripModalTime'];
         $item['full_disc'] = $_POST['createTripModalFullDisc'];
         insert_trips($database, $item);
-        header('Location: http://test.site/admin.php');
+        header('Location: /admin.php');
     }
 
 
@@ -276,13 +276,13 @@ try {
         foreach ($resp as $user){
             if($user['signup_email'] == $_POST['email'] && $user['signup_psw'] == $_POST['psw'])
             {
-                header('Location: /taxa');
+                header('Location: /');
                 $_SESSION['username'] = $user['signup_email'];
                 $_SESSION['psw'] = $user['signup_psw'];
                 exit();
             }
         }
-        header('Location: /taxa/login.php');
+        header('Location: /login.php');
     }
 
 

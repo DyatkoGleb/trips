@@ -1,0 +1,12 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.11",
+        "ext-mongo": "*",
+        "alcaeus/mongo-php-adapter": "^1.2"
+    },
+    "config": {
+        "platform": {
+            "ext-mongo": "1.6.16"
+        }
+    }
+}
